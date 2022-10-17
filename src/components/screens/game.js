@@ -148,9 +148,10 @@ const Game = ({ diffLvl, stopReset, toast, applyStatus }) => {
                         mt={1}
                         placeholder={'Number only please :)'}
                         onChange={(e) => setGuessValue(e.target.value)}
-                        onKeyDown={(evt) =>
-                            evt.key === 'e' && evt.preventDefault()
-                        }
+                        onKeyDown={(evt) => {
+                            evt.key === 'Enter' && checkGuess();
+                            evt.key === 'e' && evt.preventDefault();
+                        }}
                     />
                     <Text as={'small'} color={'purple.300'}>
                         You have {tries} tries left.

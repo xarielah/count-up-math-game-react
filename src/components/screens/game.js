@@ -48,7 +48,10 @@ const Game = ({ diffLvl, stopReset, toast, applyStatus }) => {
         if (arrNums.length === 0) {
             let arr = [];
             while (arr.length !== diffLvl.count) {
-                const rnd = Math.floor(Math.random() * 10);
+                // Change this number (after the multiply) to change the random numbers range (0 to x)
+                const startFrom = 1;
+                const upTo = 100;
+                const rnd = Math.floor(Math.random() * upTo + startFrom);
                 arr.push(rnd);
             }
 
